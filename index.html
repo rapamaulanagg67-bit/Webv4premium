@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#07070b">
+  <title>CEO RAFFSTR JOKI ELITE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <!-- SPLASH / VIDEO -->
+  <section id="splash" class="splash">
+    <video id="introVideo" class="intro-video" autoplay muted playsinline preload="auto">
+      <source src="landing(1).mp4" type="video/mp4">
+    </video>
+    <div class="splash-overlay"></div>
+    <div class="splash-content">
+      <button id="skipBtn" class="btn neon">LEWATI</button>
+    </div>
+  </section>
+
+  <main id="app" class="hidden">
+    <header class="topbar">
+      <div>
+        <div class="brand">RAFF<span>STR</span></div>
+        <small>JOKI ELITE • DIGITAL STORE</small>
+      </div>
+      <button class="icon-btn" id="profileQuick" aria-label="Profil">☰</button>
+    </header>
+
+    <section id="joki" class="page active">
+      <div class="hero-card">
+        <div class="hero-glow"></div>
+        <span class="pill">⚡ FAST RESPONSE</span>
+        <h1>JOKI KONTAK</h1>
+        <p>Pilih paket terlebih dahulu sebelum melakukan order.</p>
+      </div>
+
+      <div class="section-title">Pilih Paket</div>
+      <div class="package-grid" id="packageGrid"></div>
+
+      <div class="selected-box" id="selectedBox">
+        <span>Paket terpilih</span>
+        <strong id="selectedPackage">Belum dipilih</strong>
+      </div>
+      <button id="orderJoki" class="btn primary full" disabled>ORDER SEKARANG → PEMBAYARAN</button>
+
+      <div class="info-card">
+        <b>Setelah transfer</b>
+        <p>Simpan bukti transfer, lalu kirim ke Admin CEO RAFFSTR untuk proses order.</p>
+        <a class="wa-link" target="_blank" href="https://wa.me/6283817546555">Hubungi Admin CEO RAFFSTR</a>
+      </div>
+    </section>
+
+    <section id="payment" class="page">
+      <button class="back-btn" data-page="joki">← Kembali</button>
+      <div class="section-title">Metode Pembayaran</div>
+
+      <div class="payment-card">
+        <div class="payment-head">
+          <span class="pill">DANA</span>
+          <span id="paymentPrice" class="price">Rp0</span>
+        </div>
+        <h2>083867468118</h2>
+        <p>A/N: <b>LIP</b></p>
+        <button class="btn secondary full" id="copyDana">SALIN NOMOR DANA</button>
+      </div>
+
+      <div class="payment-card qris-card">
+        <div class="payment-head">
+          <span class="pill">QRIS</span>
+          <span class="muted">Raffstore</span>
+        </div>
+        <img src="qris-raffstore.jpeg" alt="QRIS Raffstore" class="qris">
+        <p class="center">Scan QRIS sesuai nominal paket yang dipilih.</p>
+      </div>
+
+      <div class="payment-card">
+        <h3>Silakan kirim bukti transfer di sini</h3>
+        <label class="upload">
+          <input type="file" id="proofInput" accept="image/*,.pdf">
+          <span id="proofLabel">📎 Pilih bukti transfer</span>
+        </label>
+        <div id="proofPreview" class="proof-preview"></div>
+        <button id="confirmPayment" class="btn primary full">KONFIRMASI</button>
+        <p class="small-note">Konfirmasi ini tidak otomatis memverifikasi pembayaran. Admin akan mengecek bukti transfer.</p>
+      </div>
+    </section>
+
+    <section id="digital" class="page">
+      <div class="hero-card compact">
+        <span class="pill">DIGITAL STORE</span>
+        <h1>PRODUK & JASA</h1>
+        <p>Pilih produk yang tersedia, lalu order melalui WhatsApp Admin.</p>
+      </div>
+      <div class="digital-grid" id="digitalGrid"></div>
+      <div class="info-card warning">
+        <b>Catatan</b>
+        <p>Produk yang dapat digunakan untuk merusak perangkat, mengakses akun/perangkat tanpa izin, atau aktivitas berbahaya tidak disediakan di katalog ini.</p>
+      </div>
+    </section>
+
+    <section id="profile" class="page">
+      <div class="profile-card">
+        <div class="avatar-wrap">
+          <img id="avatar" src="" alt="Foto profil">
+          <label class="avatar-edit">
+            ✎
+            <input type="file" id="avatarInput" accept="image/*">
+          </label>
+        </div>
+        <h2 id="profileName">RAFFSTR USER</h2>
+        <button class="btn secondary" id="changeName">UBAH NAMA</button>
+      </div>
+
+      <div class="menu-list">
+        <button class="menu-item" id="historyBtn">🧾 <span>Riwayat Pembelian</span><b>›</b></button>
+        <button class="menu-item" id="editPhotoBtn">🖼️ <span>Ubah Foto Profil</span><b>›</b></button>
+        <button class="menu-item" id="logoutBtn">🚪 <span>Logout / Reset Profil</span><b>›</b></button>
+      </div>
+
+      <div id="historyPanel" class="history-panel hidden">
+        <div class="section-title">Riwayat Pembelian</div>
+        <div id="historyList"></div>
+      </div>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-page="joki">⚡<span>JOKI</span></button>
+      <button class="nav-btn" data-page="digital">💎<span>DIGITAL</span></button>
+      <button class="nav-btn" data-page="profile">👤<span>PROFIL</span></button>
+    </nav>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
